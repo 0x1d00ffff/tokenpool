@@ -74,6 +74,7 @@ EDIT THIS FILE!!!
 
 * Replace 'mintforwarder' address with your own deployed version of the contract !!!
 * Replace 'batch payments' contract address as well !!! your own deployed contract !!
+* NOTE: make sure the 'batch payments' contract is owned by the 'payments' account. If it is not you will need to call transferOwnership on the 'batch payments' contract to switch ownership.
 
 Here are examples of these contracts to copy and paste the code and deploy using https://remix.ethereum.org:
 
@@ -116,3 +117,76 @@ node util/reset_all_miner_reward_data.js
 
 
 ## TODO / BUGS
+
+
+
+## DATABASE INFO
+This is a list of various database keys I have seen while looking through the
+code. Note this is not a complete list and there may be duplicates.
+
+#### Mongo DB Keys
+balance_payment
+payment_batch
+shares_data_downcase
+miner_data_downcase
+
+#### Redis Keys - all strings, some are hash keys that are followed by one or more types of data
+challengeNumber
+ethBlockNumber
+miningTarget
+miningDifficulty
+queued_mint_transactions
+queued_payment_transactions
+lost_transactions_list
+active_transactions
+active_transactions_list
+queuedTxCount
+pendingTxCount
+minedTxCount
+successTxCount
+queuedMintsCount
+queuedPaymentsCount
+pendingMintsCount
+pendingPaymentsCount
+successTxCount
+totalPoolFeeTokens
+totalCommunityFeeTokens
+recent_challenges
+unconfirmed_submitted_solution_tx
+balance_transfers:0xLOWERCASEETHEREUMADDRESSHERE
+balance_transfer
+total_pool_hashrate
+invalid_share
+miner_submitted_share:0xLOWERCASEETHEREUMADDRESSHERE
+miner_invalid_share:0xLOWERCASEETHEREUMADDRESSHERE
+submitted_share
+queued_shares_list
+unconfirmed_submitted_solution_tx
+balance_transfer, paymentId
+queued_replacement, balancePaymentId
+submitted_solutions_list
+submitted_solution_tx
+totalPoolFeeTokens
+totalCommunityFeeTokens
+shares_data_downcase
+miner_data_downcase
+queued_shares_list
+balance_payments
+balance_transfer
+balance_transfer, transferId
+balance_transfer:0xLOWERCASEETHEREUMADDRESSHERE
+balance_transfers:0xLOWERCASEETHEREUMADDRESSHERE
+balance_payment
+balance_payment, paymentId
+payment_tx, paymentId
+balance_payments:0xLOWERCASEETHEREUMADDRESSHERE
+miner_submitted_share:0xLOWERCASEETHEREUMADDRESSHERE
+active_transactions_list
+queued_payment_transactions
+active_transactions_list
+queued_replacement_payment
+unconfirmed_broadcasted_payment
+submitted_shares_list
+miner_data_downcase, minerEthAddress
+
+

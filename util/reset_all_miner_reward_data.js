@@ -1,3 +1,4 @@
+/* NOT TESTED WORKING */
 
 var redisInterface = require('../lib/redis-interface')
 var mongoInterface = require('../lib/mongo-interface')

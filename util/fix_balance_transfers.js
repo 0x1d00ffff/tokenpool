@@ -1,3 +1,12 @@
+/* NOT TESTED WORKING */
+
+/* loads all balance transfers stored under the 'balance_transfer' key, extracts
+ * the miner's address, then re-saves each trasfter under a miner-specific key (like
+ * 'balance_transfer:0xaddress'
+ *
+ * this appears to only be useful when migrating redis data from an older format to
+ * a newer one 
+ * */
 
 var redisInterface = require('../lib/redis-interface')
 

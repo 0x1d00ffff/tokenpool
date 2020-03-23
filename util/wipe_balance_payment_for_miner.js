@@ -1,4 +1,4 @@
-
+/* NOT TESTED WORKING */
 
 
 var redisInterface = require('../lib/redis-interface')

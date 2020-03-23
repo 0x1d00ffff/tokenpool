@@ -36,18 +36,18 @@ a
 .color-primary
 
 {
-  color: #fab329;
+  color: #27a01f;
 }
 
 
 .color-yellow
 {
-  color: #fab329;
+  color: #27cd1f;
 }
 
 .color-alternate
 {
-  color: white;
+  color: 71c96b;
 }
 
 .color-primary-heavy
@@ -57,7 +57,7 @@ a
 
 .color-beigh
 {
-  color: #fab329;
+  color: #71c96b;
 }
 
 
@@ -66,26 +66,26 @@ a
 {
   color: #f7f1e1;
 
-   background: linear-gradient(#fab329, #e19725);
+   background: linear-gradient(#66bf60, #23b519);
 }
 
 .button-primary
 {
   color: white;
-  background: #e19725;
-  border: 1px solid #e19725;
+  background: #23b519;
+  border: 1px solid #23b519;
 
 }
 
 
 .button:hover {
-    border: 1px solid #e19725;
+    border: 1px solid #23b519;
 }
 
 .button-bubble
 {
   padding:8px;
-  border: 1px solid #e19725;
+  border: 1px solid #23b519;
   border-radius: 3px;
   display: inline-block;
 }
@@ -102,7 +102,7 @@ a
 .button-bubble:hover
 {
   padding:9px;
-  border: 0px solid #e19725;
+  border: 0px solid #23b519;
   border-radius: 3px;
   display: inline-block;
   color: #ddd;
@@ -129,7 +129,7 @@ a
 
 .orange-theme
 {
-  background-color: #ff7209;
+  background-color: #27a01f;
 
 
 
@@ -146,10 +146,6 @@ a
 
   }
 }
-
-
- 
-
 
 
 .transaction-list

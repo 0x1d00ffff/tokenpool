@@ -72,9 +72,8 @@ var poolconfig = {
 ####     [found in app/assets/contracts/deployedContractInfo.json]
 EDIT THIS FILE!!!
 
-* Replace 'mintforwarder' address with your own deployed version of the contract !!!
-* Replace 'batch payments' contract address as well !!! your own deployed contract !!
-* NOTE: make sure the 'batch payments' contract is owned by the 'payments' account. If it is not you will need to call transferOwnership on the 'batch payments' contract to switch ownership.
+* Replace 'mintforwarder' address with your own deployed version of the contract !!! NOTE: make sure that in the 'mintforwarder' contract, the payoutsWallet address is set to the address of the 'batch payments' contract
+* Replace 'batch payments' contract address as well !!! your own deployed contract !! NOTE: make sure the 'batch payments' contract is owned by the 'payments' account. If it is not you will need to call transferOwnership on the 'batch payments' contract to switch ownership.
 
 Here are examples of these contracts to copy and paste the code and deploy using https://remix.ethereum.org:
 
@@ -117,7 +116,10 @@ node util/reset_all_miner_reward_data.js
 
 
 ## TODO / BUGS
-
+ - Account Shares page often shows all miners with share % of NaN
+ - Account Shares list only shows some miners(?) possibly those with recent shares
+ - All payment transactions fail and revert
+   - Account Shares list shows Total Tokens Earned as 0. Possibly due to reverted payouts
 
 
 ## DATABASE INFO

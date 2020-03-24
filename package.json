@@ -13,6 +13,7 @@
     "server": "node index.js",
     "redis": "redis-server",
     "clean_redis": "node clean-redis.js",
+    "format": "npx standard --fix \"lib/**/*.js\"",
     "payment_log": "node util/payment-log.js",
     "fix_balance_transfers": "node util/fix_balance_transfers.js",
     "wipe_balance_payments": "node util/wipe_balance_payments.js",

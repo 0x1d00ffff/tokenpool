@@ -1,12 +1,9 @@
-### Token Mining Pool  
+### Kiwi Token Mining Pool  
+Site: [KIWI Token Mining Pool](http://mining.kiwi-token.com/)
+A pool for mining [Kiwi Tokens](https://etherscan.io/token/0x2bf91c18cd4ae9c2f2858ef9fe518180f7b5096d)
 
-Developed by the 0xBitcoin Community
-
+A fork of [0xBitcoin Tokenpool](https://github.com/0xbitcoin/tokenpool)
 (GNU PUBLIC LICENSE)
-
-A pool for mining EIP918 Tokens
-
-See me running at http://tokenminingpool.com
 
 
 Windows GPU Miner 1
@@ -108,11 +105,8 @@ https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubunt
    - Redis is only used for frontend non-critical data, but is required for this web application
 
 
-
 ## Task Commands Example
 node util/reset_all_miner_reward_data.js
-
-
 
 
 ## TODO / BUGS
@@ -120,6 +114,17 @@ node util/reset_all_miner_reward_data.js
  - Account Shares list only shows some miners(?) possibly those with recent shares
  - All payment transactions fail and revert
    - Account Shares list shows Total Tokens Earned as 0. Possibly due to reverted payouts
+ - Add input sanitization to api endpoints in peer-interface.js. API calls from a miner
+   with a malformed address should return error.
+ - Payment batching (batchMinedPayments()) seems to be set up to occur every 30 seconds,
+   but it also appears to create a new batch whenever a balance payment is available. Need
+   to do some more checks/testing to see if this is desirable, if it should be slowed
+   down, or if it should be simply called by a different periodic task.
+ - Switch to geth and modify COLLECT_TOKEN_DATA_PERIOD in token-interface.js to a much 
+   lower number. Once every 30 seconds currently - is that correct? It seems the pool 
+   would not work well if going that slow.
+ - If vardiff is not used, disable updateVariableDifficultyPeriod task. Alternatively
+   just re-enable vardiff.
 
 ## FORMATTING
  - run `npm run format`

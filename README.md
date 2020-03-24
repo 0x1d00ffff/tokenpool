@@ -121,6 +121,8 @@ node util/reset_all_miner_reward_data.js
  - All payment transactions fail and revert
    - Account Shares list shows Total Tokens Earned as 0. Possibly due to reverted payouts
 
+## FORMATTING
+ - run `npm run format`
 
 ## DATABASE INFO
 This is a list of various database keys I have seen while looking through the

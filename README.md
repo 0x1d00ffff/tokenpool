@@ -132,6 +132,9 @@ node util/reset_all_miner_reward_data.js
    so parts of the code can be simplified. For example getTransactionStatistics can
    be simplified along with the logic at the beginning of broadcastQueuedMintTransactions.
  - Every share is validated at least twice. See TODO at the top of handlePeerShareSubmit
+ - Vardiff adjustment is broken because handleValidShare is using
+   minerData.lastSubmittedSolutionTime (which is always null) to fill out share.timeToFind. This causes share.timeToFind=0 to be set for all shares - so getAverageSolutionTime
+   skips over all shares and returns null. 
 
 ## FORMATTING
  - run `npm run format`

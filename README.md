@@ -134,7 +134,9 @@ node util/reset_all_miner_reward_data.js
  - Every share is validated at least twice. See TODO at the top of handlePeerShareSubmit
  - Vardiff adjustment is broken because handleValidShare is using
    minerData.lastSubmittedSolutionTime (which is always null) to fill out share.timeToFind. This causes share.timeToFind=0 to be set for all shares - so getAverageSolutionTime
-   skips over all shares and returns null. 
+   skips over all shares and returns null.
+   - Setting a lower minimumShareDifficulty in pool.config.js seems to have no affect
+     on a running pool. Probably related to above Vardiff issues. 
 
 ## FORMATTING
  - run `npm run format`

@@ -125,6 +125,13 @@ node util/reset_all_miner_reward_data.js
    would not work well if going that slow.
  - If vardiff is not used, disable updateVariableDifficultyPeriod task. Alternatively
    just re-enable vardiff.
+ - cleanRedisData should be a periodic task. It removes extra entries from redis lists
+   that would otherwise grow unbounded. Test/trace code to figure out why it is not
+   configured as a periodic task.
+ - The first version of this code only used a single eth wallet for mints and payouts,
+   so parts of the code can be simplified. For example getTransactionStatistics can
+   be simplified along with the logic at the beginning of broadcastQueuedMintTransactions.
+ - Every share is validated at least twice. See TODO at the top of handlePeerShareSubmit
 
 ## FORMATTING
  - run `npm run format`

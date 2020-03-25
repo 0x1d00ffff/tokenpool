@@ -1,6 +1,6 @@
 
 var poolconfig = {
-  minimumShareDifficulty: 105,
+  minimumShareDifficulty: 105,  // minimumShareDifficulty should be <= token difficulty
   solutionGasPriceWei: 10,
   transferGasPriceWei: 6,
   poolTokenFee: 5,

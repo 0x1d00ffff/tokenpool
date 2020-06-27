@@ -137,6 +137,10 @@ node util/reset_all_miner_reward_data.js
    skips over all shares and returns null.
    - Setting a lower minimumShareDifficulty in pool.config.js seems to have no affect
      on a running pool. Probably related to above Vardiff issues. 
+ - updateVariableDifficultyPeriod in peer-interface clears validSubmittedSolutionsCount
+   from each miner's sharesData each time it is called. This is probably not intentional,
+   since this number is later in getUpdatedVarDiffForMiner to decide which miners are
+   active.
 
 ## FORMATTING
  - run `npm run format`
